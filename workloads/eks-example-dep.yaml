@@ -24,7 +24,6 @@ spec:
       containers:
       - name: eks-example
         image: nginx:latest
-        image: httpd:2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
