@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: eks-example
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/agro-crm:99a021215b3aa3c70456fd18708c4b49f0c2a5e0
+        image: nginx:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
