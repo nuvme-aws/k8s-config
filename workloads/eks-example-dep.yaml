@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +23,7 @@ spec:
     spec:
       containers:
       - name: eks-example
-        image: httpd:latest
+        image: httpd:2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
