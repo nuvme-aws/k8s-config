@@ -23,11 +23,7 @@ spec:
     spec:
       containers:
       - name: eks-example
-<<<<<<< HEAD
-        image: httpd:latest
-=======
-        image: httpd:2
->>>>>>> 8e7ccdefd7594806672256dc4c01df6aee6ebbdd
+        image: nginx:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
