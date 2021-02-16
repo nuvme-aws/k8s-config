@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eks-example
+  name: eks-example2
   namespace: eks-example
   labels:
     app: eks-example
@@ -15,19 +15,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: eks-example
+      app: eks-example2
   template:
     metadata:
       labels:
-        app: eks-example
+        app: eks-example2
     spec:
       containers:
-      - name: eks-example
-<<<<<<< HEAD
-        image: httpd:latest
-=======
-        image: httpd:2
->>>>>>> 8e7ccdefd7594806672256dc4c01df6aee6ebbdd
+      - name: eks-example2
+        image: nginx:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
