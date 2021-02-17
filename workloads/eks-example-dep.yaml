@@ -23,10 +23,10 @@ spec:
     spec:
       containers:
       - name: eks-example
-        image: nginx:1.18-perl
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 3000
           name: http
           protocol: TCP
         livenessProbe:
