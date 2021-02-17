@@ -13,4 +13,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: eks-example2
+    app: eks-example
