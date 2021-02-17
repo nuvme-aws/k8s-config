@@ -15,3 +15,10 @@ spec:
             backend:
               serviceName: eks-example
               servicePort: 80
+    - http:
+        paths:
+          - path: /teste
+            backend:
+              serviceName: eks-example2
+              servicePort: 80
+
