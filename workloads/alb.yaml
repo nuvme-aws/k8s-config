@@ -32,7 +32,8 @@ metadata:
   
 spec:
   rules:
-    - http:
+    - host: eks.oficina5.com.br
+      http:
         paths:
           - path: /*
             backend:
