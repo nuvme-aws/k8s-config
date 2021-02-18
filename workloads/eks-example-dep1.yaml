@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: eks-example1
-        image: nginx:latest
+        image: nginx:1-alpine-perl
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
