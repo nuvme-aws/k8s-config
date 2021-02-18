@@ -5,6 +5,8 @@ metadata:
   name: alb-ingress
   annotations:
 
+    alb.ingress.kubernetes.io/group.name: eks-alb-ingress
+
     # Ingress Core Settings
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/target-type: ip
