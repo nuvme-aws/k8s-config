@@ -6,10 +6,10 @@ metadata:
   labels:
     app: eks-example
 spec:
-  type: LoadBalancer
+  type: ClusterIP 
   ports:
     - port: 80
-      targetPort: http
+      targetPort: 8080
       protocol: TCP
       name: http
   selector:
