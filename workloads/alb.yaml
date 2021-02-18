@@ -37,5 +37,5 @@ spec:
           - path: /*
             backend:
               serviceName: eks-example
-              servicePort: 3000
+              servicePort: 80
 
