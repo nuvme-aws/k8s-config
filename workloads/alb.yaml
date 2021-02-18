@@ -27,8 +27,8 @@ spec:
   rules:
     - host: eks.oficina5.com.br
       http:
-        #paths:
-        #  - path: /*
+        paths:
+          - path: /*
             backend:
               serviceName: eks-example
               servicePort: 80
