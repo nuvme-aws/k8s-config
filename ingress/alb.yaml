@@ -35,11 +35,3 @@ spec:
             backend:
               serviceName: eks-example
               servicePort: 80
-    - host: eks1.oficina5.com.br
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: eks-example2
-              servicePort: 8080
-
