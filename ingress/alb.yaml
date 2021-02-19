@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   namespace: oficina5
-  name: alb-ingress
+  name: alb-ingress-eks
   annotations:
 
     # Ingress GroupName
