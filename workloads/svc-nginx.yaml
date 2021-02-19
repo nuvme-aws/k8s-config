@@ -13,4 +13,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: eks-example1
+    #app: eks-example1
+    app.kubernetes.io/name: eks-example1
