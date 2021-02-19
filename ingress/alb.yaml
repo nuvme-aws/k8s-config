@@ -6,7 +6,7 @@ metadata:
   annotations:
 
     # Ingress GroupName
-    alb.ingress.kubernetes.io/group.name: eks-alb-ingress
+    #alb.ingress.kubernetes.io/group.name: eks-alb-ingress
 
     # Ingress Core Settings
     kubernetes.io/ingress.class: alb
