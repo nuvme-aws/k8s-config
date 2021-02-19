@@ -31,9 +31,17 @@ metadata:
 spec:
   rules:
     - host: eks.oficina5.com.br
-      #http:
-        #paths:
-          #- path: /*
+      http:
+        paths:
+          - path: /*
             backend:
               serviceName: eks-example
               servicePort: 80
+    - host: eks2.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: eks-example1
+              servicePort: 80
+
