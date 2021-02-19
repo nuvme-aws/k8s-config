@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: eks-example1
-  namespace: eks-example
+  namespace: oficina5
   labels:
     app: eks-example1
   annotations:

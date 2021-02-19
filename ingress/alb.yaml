@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: eks-example
+  namespace: oficina5
   name: alb-ingress
   annotations:
 
