@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metodista-qa
+  namespace: oficina5
+  labels:
+    app: metodista-qa
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metodista-qa
+  template:
+    metadata:
+      labels:
+        app: metodista-qa
+    spec:
+      containers:
+      - name: metodista-qa
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http

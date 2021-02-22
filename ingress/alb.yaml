@@ -44,4 +44,10 @@ spec:
             backend:
               serviceName: eks-example1
               servicePort: 80
-
+    - host: metodista-qa.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: metodista-qa
+              servicePort: 80
