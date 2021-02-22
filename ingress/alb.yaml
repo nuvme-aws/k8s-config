@@ -30,24 +30,37 @@ metadata:
 
 spec:
   rules:
-    - host: eks.oficina5.com.br
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: eks-example
-              servicePort: 80
-    - host: eks1.oficina5.com.br
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: eks-example1
-              servicePort: 80
-    - host: metodista-qa.oficina5.com.br
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: metodista-qa
-              servicePort: 80
+  - host: eks.oficina5.com.br
+    http:
+      paths:
+        - path: /*
+          backend:
+            serviceName: ssl-redirect
+            servicePort: use-annotation
+        - path: /*
+          backend:
+            serviceName: eks-example
+            servicePort: 80
+
+#  rules:
+#    - host: eks.oficina5.com.br
+#      http:
+#        paths:
+#          - path: /*
+#            backend:
+#              serviceName: eks-example
+#              servicePort: 80
+#    - host: eks1.oficina5.com.br
+#      http:
+#        paths:
+#          - path: /*
+#            backend:
+#              serviceName: eks-example1
+#              servicePort: 80
+#    - host: metodista-qa.oficina5.com.br
+#      http:
+#        paths:
+#          - path: /*
+#            backend:
+#              serviceName: metodista-qa
+#              servicePort: 80
