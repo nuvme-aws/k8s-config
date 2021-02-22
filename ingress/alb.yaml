@@ -30,26 +30,18 @@ metadata:
 
 spec:
   rules:
+    - host: eks.oficina5.com.br
       http:
         paths:
           - path: /*
             backend:
-              serviceName: nginx-ingress
+              serviceName: eks-example
               servicePort: 80
-
-#  rules:
-#    - host: eks.oficina5.com.br
-#      http:
-#        paths:
-#          - path: /*
-#            backend:
-#              serviceName: eks-example
-#              servicePort: 80
-#    - host: eks1.oficina5.com.br
-#      http:
-#        paths:
-#          - path: /*
-#            backend:
-#              serviceName: eks-example1
-#              servicePort: 80
+    - host: eks1.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: eks-example1
+              servicePort: 80
 
