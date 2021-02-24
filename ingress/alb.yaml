@@ -63,3 +63,14 @@ spec:
             backend:
               serviceName: metodista-qa
               servicePort: 80
+    - host: metodista-aa.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: metodista-aa
+              servicePort: 80
