@@ -12,7 +12,7 @@ metadata:
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: metodista-aa
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: metodista-aa
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa:latest
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
