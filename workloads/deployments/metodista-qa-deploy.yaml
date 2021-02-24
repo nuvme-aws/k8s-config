@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: metodista-qa
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa:latest
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa:test-rancher
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
