@@ -30,7 +30,7 @@ metadata:
 
 spec:
   rules:
-    - host: eks.oficina5.com.br
+    - host: plan-agricola-dev.oficina5.com.br
       http:
         paths:
           - path: /*
@@ -39,9 +39,9 @@ spec:
               servicePort: use-annotation
           - path: /*
             backend:
-              serviceName: eks-example
+              serviceName: plan-agricola-dev
               servicePort: 80
-    - host: eks1.oficina5.com.br
+    - host: starter-dev.oficina5.com.br
       http:
         paths:
           - path: /*
@@ -50,7 +50,7 @@ spec:
               servicePort: use-annotation
           - path: /*
             backend:
-              serviceName: eks-example1
+              serviceName: starter-dev
               servicePort: 80
     - host: metodista-qa.oficina5.com.br
       http:

@@ -2,31 +2,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eks-example1
+  name: plan-agricola-dev
   namespace: oficina5
   labels:
-    app: eks-example1
+    app: plan-agricola-dev
   annotations:
     # Container Image Automated Updates
     flux.weave.works/automated: "true"
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: eks-example1
+      app: plan-agricola-dev
   template:
     metadata:
       labels:
-        app: eks-example1
+        app: plan-agricola-dev
     spec:
       containers:
-      - name: eks-example1
-        image: nginx:1-alpine-perl
+      - name: plan-agricola-dev
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 3000
           name: http
           protocol: TCP
         livenessProbe:

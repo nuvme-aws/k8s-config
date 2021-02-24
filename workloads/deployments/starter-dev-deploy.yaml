@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eks-example
+  name: starter-dev
   namespace: oficina5
   labels:
-    app: eks-example
+    app: starter-dev
   annotations:
     # Container Image Automated Updates
     flux.weave.works/automated: "true"
@@ -15,15 +15,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: eks-example
+      app: starter-dev
   template:
     metadata:
       labels:
-        app: eks-example
+        app: starter-dev
     spec:
       containers:
-      - name: eks-example
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/metodista-qa:latest
+      - name: starter-dev
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
