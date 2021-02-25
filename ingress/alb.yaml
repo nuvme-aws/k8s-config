@@ -30,7 +30,7 @@ metadata:
 
 spec:
   rules:
-    - host: plan-agricola-dev.oficina5.com.br
+    - host: api-plan-agricola-dev.oficina5.com.br
       http:
         paths:
           - path: /*
@@ -41,7 +41,7 @@ spec:
             backend:
               serviceName: plan-agricola-dev
               servicePort: 80
-    - host: starter-dev.oficina5.com.br
+    - host: api-starter-dev.oficina5.com.br
       http:
         paths:
           - path: /*
