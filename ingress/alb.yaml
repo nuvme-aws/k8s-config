@@ -52,14 +52,3 @@ spec:
             backend:
               serviceName: starter-dev
               servicePort: 80
-    - host: metodista-qa.oficina5.com.br
-      http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: ssl-redirect
-              servicePort: use-annotation
-          - path: /*
-            backend:
-              serviceName: metodista-qa
-              servicePort: 80
