@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: starter-dev
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:3355039ddc2f6600847f8d6936d11ecb82d01d71
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:06954126214fc1f7f73ab494204a99014250f19e
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
