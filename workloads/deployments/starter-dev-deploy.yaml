@@ -24,6 +24,9 @@ spec:
       containers:
       - name: starter-dev
         image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:06954126214fc1f7f73ab494204a99014250f19e
+        env:
+        - name: nuvme_env
+          value: "nuvme"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
