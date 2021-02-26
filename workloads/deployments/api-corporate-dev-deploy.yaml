@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-corporate-dev
+  namespace: oficina5
+  labels:
+    app: api-corporate-dev
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-corporate-dev
+  template:
+    metadata:
+      labels:
+        app: api-corporate-dev
+    spec:
+      containers:
+      - name: api-corporate-dev
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-dev:fe1f80ed74b7bb1ee0466fd21e21b21d32c48bc4
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http

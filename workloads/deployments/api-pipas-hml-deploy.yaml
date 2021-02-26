@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-pipas-hml
+  namespace: oficina5
+  labels:
+    app: api-pipas-hml
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-pipas-hml
+  template:
+    metadata:
+      labels:
+        app: api-pipas-hml
+    spec:
+      containers:
+      - name: api-pipas-hml
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/pipas-hml:984f472e60611a6b31161d99025e9b31266163a9
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http

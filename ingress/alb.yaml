@@ -52,3 +52,69 @@ spec:
             backend:
               serviceName: starter-dev
               servicePort: 80
+    - host: api-agrocrm-dev.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-agrocrm-dev
+              servicePort: 80
+    - host: api-agrocrm-hml.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-agrocrm-hml
+              servicePort: 80
+    - host: api-corporate-dev.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-corporate-dev
+              servicePort: 80
+    - host: api-corporate-qas.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-corporate-qas
+              servicePort: 80
+    - host: api-flg-qas.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-flg-qas
+              servicePort: 80
+    - host: api-pipas-hml.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-pipas-hml
+              servicePort: 80

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-agrocrm-hml
+  namespace: oficina5
+  labels:
+    app: api-agrocrm-hml
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  selector:
+    app: api-agrocrm-hml
+    #app.kubernetes.io/name: api-agrocrm-hml

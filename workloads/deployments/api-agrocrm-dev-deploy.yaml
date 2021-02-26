@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-agrocrm-dev
+  namespace: oficina5
+  labels:
+    app: api-agrocrm-dev
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-agrocrm-dev
+  template:
+    metadata:
+      labels:
+        app: api-agrocrm-dev
+    spec:
+      containers:
+      - name: api-agrocrm-dev
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/agrocrm-dev:bea7b443c8773f0b62c04ddfbe7293b86d7bbb0b
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http

@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-flg-qas
+  namespace: oficina5
+  labels:
+    app: api-flg-qas
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-flg-qas
+  template:
+    metadata:
+      labels:
+        app: api-flg-qas
+    spec:
+      containers:
+      - name: api-flg-qas
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/flg-qas:dc84e5505c2acad58018c86301601fcf549b7c34
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
