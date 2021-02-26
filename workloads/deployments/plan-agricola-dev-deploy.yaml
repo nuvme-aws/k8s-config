@@ -24,9 +24,9 @@ spec:
       containers:
       - name: plan-agricola-dev
         image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:64700d8f19e1ed64ed68b8d8f62a3f193ae66659
-        env:
-        - name: test_env
-          value: "teste"
+#        env:
+#        - name: test_env
+#          value: "teste"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
