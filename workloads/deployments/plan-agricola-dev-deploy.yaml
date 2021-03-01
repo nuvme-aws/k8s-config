@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: plan-agricola-dev
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:501d3fb320f9b7ac3d6953991098df81ca055a43
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:d66fc723aeeb11c88b4ccaa40213bc4b974d857a
         env:
         - name: test_env
           value: "teste"
