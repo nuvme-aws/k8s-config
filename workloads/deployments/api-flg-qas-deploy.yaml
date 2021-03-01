@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-flg-qas
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/flg-qas:dc84e5505c2acad58018c86301601fcf549b7c34
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/flg-qas:0ed26b53cc7da46147728cd62325f1f2a7f72557
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
