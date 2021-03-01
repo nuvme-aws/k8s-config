@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-pipas-hml
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/pipas-hml:984f472e60611a6b31161d99025e9b31266163a9
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/pipas-hml:d4f1b369cd96e984213281234d295cfecd99c6b4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
