@@ -107,7 +107,7 @@ spec:
             backend:
               serviceName: api-flg-qas
               servicePort: 80
-    - host: api-pipas-hml.oficina5.com.br
+    - host: api.projetopipas.com.br
       http:
         paths:
           - path: /*
