@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: starter-dev
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:06954126214fc1f7f73ab494204a99014250f19e
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:3854caf4f69590e10e95f6c6f2cb102967023f6d
         env:
         - name: nuvme_env
           value: "nuvme"
