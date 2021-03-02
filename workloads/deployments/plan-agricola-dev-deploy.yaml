@@ -24,9 +24,6 @@ spec:
       containers:
       - name: plan-agricola-dev
         image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:d66fc723aeeb11c88b4ccaa40213bc4b974d857a
-        env:
-        - name: NUVME_ParameterStore
-          valueFrom: arn:aws:ssm:us-east-2:837042927026:parameter/plan-agricola-dev-NUVME
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
