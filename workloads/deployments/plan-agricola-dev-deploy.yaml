@@ -12,7 +12,7 @@ metadata:
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
-  replicas: 2
+  replicas: 0
   selector:
     matchLabels:
       app: plan-agricola-dev
