@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-ercal-qas
+  namespace: oficina5
+  labels:
+    app: api-ercal-qas
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-ercal-qas
+  template:
+    metadata:
+      labels:
+        app: api-ercal-qas
+    spec:
+      containers:
+      - name: api-ercal-qas
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:d14372fa19c6a9d109d2408b430d283c62da6010
+        env:
+        - name: nuvme_env
+          value: "nuvme"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
