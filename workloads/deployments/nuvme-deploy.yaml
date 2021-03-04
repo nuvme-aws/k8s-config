@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nuvme
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/nuvme:3854caf4f69590e10e95f6c6f2cb102967023f6d
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/starter-dev:3854caf4f69590e10e95f6c6f2cb102967023f6d
         env:
           - name: SECRET_USERNAME
             valueFrom:
