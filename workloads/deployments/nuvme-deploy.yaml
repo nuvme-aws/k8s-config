@@ -24,17 +24,17 @@ spec:
       containers:
       - name: nuvme
         image: nginx:1.18-alpine-perl
-#        env:
-#        - name: SECRET_USERNAME
-#          valueFrom:
-#            secretKeyRef:
-#              name: mysecret
-#              key: username
-#        - name: SECRET_PASSWORD
-#          valueFrom:
-#            secretKeyRef:
-#              name: mysecret
-#              key: password
+        env:
+        - name: SECRET_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: username
+        - name: SECRET_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
