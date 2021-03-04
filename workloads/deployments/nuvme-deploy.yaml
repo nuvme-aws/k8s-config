@@ -28,13 +28,18 @@ spec:
         - name: SECRET_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mysecret
+              name: api-nuvme
               key: username
         - name: SECRET_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysecret
+              name: api-nuvme
               key: password
+        - name: S3_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: api-nuvme
+              key: s3bucket
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
