@@ -25,8 +25,26 @@ spec:
       - name: api-ercal-qas
         image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:3c01cd5a6b496309259d573cb9420051c3324e09
         env:
-        - name: nuvme_env
-          value: "nuvme"
+        - name: CONN_DB
+          valueFrom:
+            secretKeyRef:
+                name: api-ercal-qas
+                key: CONN_DB
+        - name: CONN_HOST
+          valueFrom:
+            secretKeyRef:
+                name: api-ercal-qas
+                key: CONN_HOST
+        - name: CONN_PASS
+          valueFrom:
+            secretKeyRef:
+                name: api-ercal-qas
+                key: CONN_PASS
+        - name: CONN_USER
+          valueFrom:
+            secretKeyRef:
+                name: api-ercal-qas
+                key: CONN_USER
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
