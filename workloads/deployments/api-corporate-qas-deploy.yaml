@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-corporate-qas
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:3c01cd5a6b496309259d573cb9420051c3324e09
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:10e88ef98a1886f061eeb4e0734bc972af653726
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
