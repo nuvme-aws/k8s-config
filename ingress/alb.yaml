@@ -129,3 +129,14 @@ spec:
             backend:
               serviceName: api-ercal-qas
               servicePort: 80
+    - host: api-demo-connecterp.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-demo-connecterp
+              servicePort: 80

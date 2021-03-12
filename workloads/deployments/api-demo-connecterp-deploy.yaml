@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-demo-connecterp
+  namespace: oficina5
+  labels:
+    app: api-demo-connecterp
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-demo-connecterp
+  template:
+    metadata:
+      labels:
+        app: api-demo-connecterp
+    spec:
+      containers:
+      - name: api-demo-connecterp
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:10e88ef98a1886f061eeb4e0734bc972af653726
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
