@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-agrocrm-dev
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/agrocrm-dev:4fee086c85c40bcf61b755516636219991527a8d
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/agrocrm-dev:785f6f03b35cef212f5cd41671579e84ef4fdaa0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
