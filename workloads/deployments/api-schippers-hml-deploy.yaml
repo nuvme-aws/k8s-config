@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-schippers-hml
+  namespace: oficina5
+  labels:
+    app: api-schippers-hml
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-schippers-hml
+  template:
+    metadata:
+      labels:
+        app: api-schippers-hml
+    spec:
+      containers:
+      - name: api-schippers-hml
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-hml:17308a0bcd9f7ea4da906170bd400201b5044469
+        env:
+        - name: CONN_DB
+          valueFrom:
+            secretKeyRef:
+                name: api-schippers-hml
+                key: CONN_DB
+        - name: CONN_HOST
+          valueFrom:
+            secretKeyRef:
+                name: api-schippers-hml
+                key: CONN_HOST
+        - name: CONN_PASS
+          valueFrom:
+            secretKeyRef:
+                name: api-schippers-hml
+                key: CONN_PASS
+        - name: CONN_USER
+          valueFrom:
+            secretKeyRef:
+                name: api-schippers-hml
+                key: CONN_USER 
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http

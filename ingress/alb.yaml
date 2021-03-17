@@ -140,3 +140,25 @@ spec:
             backend:
               serviceName: api-demo-connecterp
               servicePort: 80
+    - host: api-ercal-hml.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-ercal-hml
+              servicePort: 80
+    - host: api-schippers-hml.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-ercal-hml
+              servicePort: 80
