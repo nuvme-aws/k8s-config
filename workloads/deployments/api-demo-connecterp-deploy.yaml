@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-demo-connecterp
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:efcee57960db46481af3155dd9b2e2c664c7ae77
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:83ff107b730ecf425c81ddc0f661ccc1ad6ecacf
         env:
         - name: CONN_DB
           valueFrom:
