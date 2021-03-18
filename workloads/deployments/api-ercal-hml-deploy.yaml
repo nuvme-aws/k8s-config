@@ -23,28 +23,28 @@ spec:
     spec:
       containers:
       - name: api-ercal-hml
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-hml:17308a0bcd9f7ea4da906170bd400201b5044469
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-hml:166c3557bebcaae5f14ae8aee0b605ccb44f28ca
         env:
         - name: CONN_DB
           valueFrom:
             secretKeyRef:
-                name: api-ercal-hml
-                key: CONN_DB
+              name: api-ercal-hml
+              key: CONN_DB
         - name: CONN_HOST
           valueFrom:
             secretKeyRef:
-                name: api-ercal-hml
-                key: CONN_HOST
+              name: api-ercal-hml
+              key: CONN_HOST
         - name: CONN_PASS
           valueFrom:
             secretKeyRef:
-                name: api-ercal-hml
-                key: CONN_PASS
+              name: api-ercal-hml
+              key: CONN_PASS
         - name: CONN_USER
           valueFrom:
             secretKeyRef:
-                name: api-ercal-hml
-                key: CONN_USER 
+              name: api-ercal-hml
+              key: CONN_USER
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
