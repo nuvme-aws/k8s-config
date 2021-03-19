@@ -162,3 +162,14 @@ spec:
             backend:
               serviceName: api-ercal-hml
               servicePort: 80
+    - host: api-mgm.oficina5.com.br
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: ssl-redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: api-mgm
+              servicePort: 80

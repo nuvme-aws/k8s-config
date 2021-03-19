@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-mgm
+  namespace: oficina5
+  labels:
+    app: api-mgm
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-mgm
+  template:
+    metadata:
+      labels:
+        app: api-mgm
+    spec:
+      containers:
+      - name: api-mgm
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/mgm:36a2f5abf4f8732f246dc818932c24fcaefa1bc5
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
