@@ -160,7 +160,7 @@ spec:
               servicePort: use-annotation
           - path: /*
             backend:
-              serviceName: api-ercal-hml
+              serviceName: api-schippers-hml
               servicePort: 80
     - host: api-mgm.oficina5.com.br
       http:
