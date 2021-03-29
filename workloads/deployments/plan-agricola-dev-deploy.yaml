@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: plan-agricola-dev
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:18bedcd4934d4d35738281a184f1c5ceea668485
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/plan-agricola-dev:f107439f42b4ffa14c55c3916e63d5ded3f4ae3a
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
