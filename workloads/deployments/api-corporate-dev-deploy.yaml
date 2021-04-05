@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-corporate-dev
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-dev:d6ae76bf20a66a7a063a3280840bc25393799967
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-dev:53fd54fe8e9459320c8c81aa96b59a3a4951e872
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
