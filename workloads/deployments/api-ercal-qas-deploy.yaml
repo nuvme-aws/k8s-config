@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-ercal-qas
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:70b27086084f0bea745144526bb7daea5a93036b
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:1e31e920b6c6c8fb243f22c73fa10ee7419d56ec
         env:
         - name: CONN_DB
           valueFrom:
