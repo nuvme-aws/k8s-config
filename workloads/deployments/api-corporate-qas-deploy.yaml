@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-corporate-qas
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:1e31e920b6c6c8fb243f22c73fa10ee7419d56ec
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-qas:3cde3b2d2187281958d34f9f2228c12169f4e26a
         env:
         - name: CONN_DB
           valueFrom:
