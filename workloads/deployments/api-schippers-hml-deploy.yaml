@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api-schippers-hml
-        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-hml:5984d2f2e3521830c10f3efb5bac7ddc23337a21
+        image: 837042927026.dkr.ecr.us-east-2.amazonaws.com/corporate-hml:ae8ed26784f68f5b90976d2b50a784d7ffc2ea97
         env:
         - name: CONN_DB
           valueFrom:
